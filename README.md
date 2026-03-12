@@ -1,9 +1,9 @@
 # Estudos JS 
 Projetos de estudos
 
-================================================
+===============
 ORDEM DE ESTUDO
-================================================
+===============
 
 1 simulador_de_download
 2 conversor_json
@@ -15,10 +15,10 @@ ORDEM DE ESTUDO
 8 api_usuarios
 9 nome_do_usuario
 
-================================================
+===============
 PROJETOS DE PRÁTICA – JAVASCRIPT / NODE / APIs
 Ordem de dificuldade
-================================================
+===============
 
 
 [1] SIMULADOR DE DOWNLOAD
@@ -50,7 +50,7 @@ await
 fluxo assíncrono
 
 
-------------------------------------------------
+===============
 
 
 [2] CONVERSOR JSON
@@ -84,8 +84,7 @@ estrutura de dados
 preparação para APIs
 
 
-------------------------------------------------
-
+===============
 
 [3] SISTEMA DE MÓDULOS
 Arquivos:
@@ -119,8 +118,7 @@ export
 organização de código
 
 
-------------------------------------------------
-
+===============
 
 [4] BUSCADOR DE CEP
 Arquivo: buscador_de_cep.js
@@ -153,8 +151,7 @@ JSON
 async/await
 
 
-------------------------------------------------
-
+===============
 
 [5] LER ARQUIVO
 Arquivo: ler_arquivo.js
@@ -183,8 +180,7 @@ filesystem
 backend básico
 
 
-------------------------------------------------
-
+===============
 
 [6] GERADOR DE SENHA
 Arquivo: gerador_de_senha.js
@@ -216,8 +212,7 @@ lógica
 aleatoriedade
 
 
-------------------------------------------------
-
+===============
 
 [7] API DE FRASES
 Arquivo: api_frases.js
@@ -247,8 +242,7 @@ rotas
 API
 
 
-------------------------------------------------
-
+===============
 
 [8] API DE USUÁRIOS
 Arquivo: api_usuarios.js
@@ -274,8 +268,7 @@ API
 estrutura de dados
 
 
-------------------------------------------------
-
+===============
 
 [9] NOME DO USUÁRIO
 Arquivo: nome_do_usuario.js
