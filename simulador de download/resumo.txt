@@ -1,0 +1,4 @@
+Axios é mais direto ao ponto em busca de dados de API
+
+Axios = biblioteca
+fecth = nativo
