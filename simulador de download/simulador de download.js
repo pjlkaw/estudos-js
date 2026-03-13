@@ -1,13 +1,20 @@
+let loading = 0
 function baixarArquivo () {
     return new Promise(function(resolve, reject) {
         setTimeout(() => {
             resolve("Download concluído")
-      }, 2000);
+      }, 5000);
     });
 }   
 async function download() {
-    console.log("Dowload Iniciado");
+    let barra = setInterval(() => {
+        if (loading < 100) {
+            loading++
+            console.log(`---------- ${loading}% ----------`)
+        }
+    }, 50)
     let resultado = await baixarArquivo();
+    clearInterval(barra)
     console.log(resultado)
 }
 
