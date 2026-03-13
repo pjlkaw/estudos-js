@@ -2,7 +2,9 @@
 Projetos de estudos
 
 ===============
+
 ORDEM DE ESTUDO
+
 ===============
 
 1 simulador_de_download
@@ -16,8 +18,9 @@ ORDEM DE ESTUDO
 9 nome_do_usuario
 
 ===============
+
 PROJETOS DE PRÁTICA – JAVASCRIPT / NODE / APIs
-Ordem de dificuldade
+
 ===============
 
 
