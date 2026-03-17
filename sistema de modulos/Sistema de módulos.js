@@ -3,8 +3,8 @@ import { soma} from "./math.js"
 import readlinesync from "readline-sync"
 import chalk from "chalk"
 
-const valor1 = parseInt(readlinesync.question("Valor 1:"))
-const valor2 = parseInt(readlinesync.question("Valor 2:"))
+const valor1 = parseInt(readlinesync.question(chalk.yellow("Valor 1: ")))
+const valor2 = parseInt(readlinesync.question(chalk.yellow("Valor 2: ")))
 
 console.log(chalk.bgCyan(" - " +
     soma(valor1,valor2) +
