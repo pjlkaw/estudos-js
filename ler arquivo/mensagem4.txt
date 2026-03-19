@@ -1,0 +1,1 @@
+Adicionar "S/N" para abrir arquivo
