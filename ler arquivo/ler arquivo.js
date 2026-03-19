@@ -1,7 +1,7 @@
 import fs from "fs" //Ler e alterar arquivos
 import readlineSync from "readline-sync"
 import { exec } from "child_process" //executar arquivos no programa padrão
-import os from "os" //sistema operacional
+import os from "os" //sistema operacional - linux, darwin, win32
 
 console.log(`Arquivos da pasta:`)
 const pasta = fs.readdirSync(".") //pega arquivos da pasta em forma de array
@@ -18,12 +18,11 @@ const input = readlineSync.question(`Substitua o conteúdo de ${arquivoEscolhido
 
 fs.writeFileSync(arquivoEscolhido, input)
 const conteudo = fs.readFileSync(arquivoEscolhido, "utf-8")
-console.log("Conteúdo alterado para:")
+console.log("\nconteúdo alterado para:")
 console.log(conteudo);
 
-const sistema = os.platform()
-console.log(sistema)
-if(sistema === "linux") {
+const sistema = os.platform(); // console.log(sistema)
+if(sistema === "linux") { //linux(xdg-open), darwin(open), win32(notepad)
     const verArquivo = readlineSync.question('Deseja abrir o arquivo? (S/N) ')
     if (verArquivo == "S" || "s") {
         exec(`xdg-open ${arquivoEscolhido}`) //"xdg-open" exclusivo para linux
