@@ -12,9 +12,9 @@ pastaFiltrada.forEach((arquivo, index) => {
     console.log(`${index} - ${arquivo}`);
 });
 
-const indice = readlineSync.questionInt('Número do arquivo para ser alterado: ')
+const indice = readlineSync.questionInt('Numero do arquivo para ser alterado: ')
 const arquivoEscolhido = pastaFiltrada[indice] //arquivo com o índice
-const input = readlineSync.question(`Substitua o conteúdo de ${arquivoEscolhido} com: `)
+const input = readlineSync.question(`Substitua o conteudo de ${arquivoEscolhido} com: `)
 
 fs.writeFileSync(arquivoEscolhido, input)
 const conteudo = fs.readFileSync(arquivoEscolhido, "utf-8")
@@ -22,14 +22,21 @@ console.log("\nconteúdo alterado para:")
 console.log(conteudo);
 
 const sistema = os.platform(); // console.log(sistema)
-if(sistema === "linux") { //linux(xdg-open), darwin(open), win32(notepad)
-    const verArquivo = readlineSync.question('Deseja abrir o arquivo? (S/N) ')
-    if (verArquivo == "S" || "s") {
+const verArquivo = readlineSync.question('Deseja abrir o arquivo? (S/N) ')
+if (verArquivo == "S" || "s") {
+    if(sistema === "linux") { //linux(xdg-open), darwin(open), win32(notepad)
         exec(`xdg-open ${arquivoEscolhido}`) //"xdg-open" exclusivo para linux
-    } else {
-        console.log("Fim do Programa");
     }
+    else if (sistema === "darwin") {
+        exec(`open ${arquivoEscolhido}`)
+    }
+    else if (sistema === "win32"){
+        exec(`notepad ${arquivoEscolhido}`)
+    }
+} else {
+    console.log("Fim do Programa");
 }
+
  
 
 // [5] LER ARQUIVO
