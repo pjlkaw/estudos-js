@@ -1,6 +1,7 @@
-import fs from "fs"
+import fs from "fs" //Ler e alterar arquivos
 import readlineSync from "readline-sync"
-import { exec } from "child_process"
+import { exec } from "child_process" //executar arquivos no programa padrão
+import os from "os" //sistema operacional
 
 console.log(`Arquivos da pasta:`)
 const pasta = fs.readdirSync(".") //pega arquivos da pasta em forma de array
@@ -11,23 +12,24 @@ pastaFiltrada.forEach((arquivo, index) => {
     console.log(`${index} - ${arquivo}`);
 });
 
-
 const indice = readlineSync.questionInt('Número do arquivo para ser alterado: ')
-const arquivoEscolhido = pastaFiltrada[indice]
+const arquivoEscolhido = pastaFiltrada[indice] //arquivo com o índice
 const input = readlineSync.question(`Substitua o conteúdo de ${arquivoEscolhido} com: `)
-
 
 fs.writeFileSync(arquivoEscolhido, input)
 const conteudo = fs.readFileSync(arquivoEscolhido, "utf-8")
 console.log("Conteúdo alterado para:")
 console.log(conteudo);
 
-
-const verArquivo = readlineSync.question('Deseja abrir o arquivo? (S/N) ')
-if (verArquivo == "S" || "s") {
-    exec(`xdg-open ${arquivoEscolhido}`) //"xdg-open" exclusivo para linux
-} else {
-    console.log("Fim do Programa");
+const sistema = os.platform()
+console.log(sistema)
+if(sistema === "linux") {
+    const verArquivo = readlineSync.question('Deseja abrir o arquivo? (S/N) ')
+    if (verArquivo == "S" || "s") {
+        exec(`xdg-open ${arquivoEscolhido}`) //"xdg-open" exclusivo para linux
+    } else {
+        console.log("Fim do Programa");
+    }
 }
  
 
