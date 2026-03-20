@@ -1,12 +1,23 @@
 import fs from 'fs'
+// import inquirer from 'inquirer';
+import { type } from 'os';
 
 const tamanhoSenha = 8
 const caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*";
-let senha = []
-for(let i = 0; i<=tamanhoSenha; i++) {
+let senha = ''
+for(let i = 0; i<tamanhoSenha; i++) {
     let caracterAleatorio = Math.floor(Math.random() * caracteres.length)
     senha += caracteres[caracterAleatorio]
 }
+
+// inquirer.prompt([
+//     {
+//         type: 'list',
+//         message: `O que você gostaria de fazer com a senha ${senha}`,
+//         choices: 'salvar no arquivo senhas.txt'
+//     }
+// ])
+
 console.log(senha)
 fs.appendFileSync("senhas.txt", senha + "\n")
 
