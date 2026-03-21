@@ -1,14 +1,30 @@
+import { log } from 'console';
 import fs from 'fs'
-// import inquirer from 'inquirer';
-import { type } from 'os';
+// import inquirer from 'inquirer'; inquirer não funcionando no sistema da escola, fazer 2 versões usando o readline e inquirer
+import readlineSync from 'readline-sync'
 
-const tamanhoSenha = 8
+const tamanhoSenha = readlineSync.questionInt('Digite o tamanho da senha: ')
+if (tamanhoSenha > 100) {
+    console.log("Senha grande de mais para executar")
+    return
+}
 const caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*";
 let senha = ''
 for(let i = 0; i<tamanhoSenha; i++) {
     let caracterAleatorio = Math.floor(Math.random() * caracteres.length)
     senha += caracteres[caracterAleatorio]
 }
+console.log("Senha gerada!\n" + senha)
+
+const salvarSenhaInput = readlineSync.question(`\nDeseja salvar a senha ' ${senha} '? (S/N)`)
+if(salvarSenhaInput == "S" || salvarSenhaInput == "s") {
+    fs.appendFileSync("senhas.txt", senha + "\n")
+    console.log("Senha salva no arquivo senhas.txt")
+}
+else {
+    console.log("Fim do Programa");  
+}
+
 
 // inquirer.prompt([
 //     {
@@ -17,10 +33,6 @@ for(let i = 0; i<tamanhoSenha; i++) {
 //         choices: 'salvar no arquivo senhas.txt'
 //     }
 // ])
-
-console.log(senha)
-fs.appendFileSync("senhas.txt", senha + "\n")
-
 
 // [6] GERADOR DE SENHA
 // Arquivo: gerador_de_senha.js
