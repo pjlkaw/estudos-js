@@ -7,6 +7,15 @@
 </head>
 <body>
     <h1>Home</h1>
+    <p id="frase"></p>
     <a href="http://localhost:3000/frase">Frase JSON</a>
+
+    <script>
+        fetch('/frase') // http://localhost:3000/frase -> não se usa, ja estamos no servidor localhost:3000
+        .then(res => res.json()) // transforma em json
+        .then(data => {
+            document.getElementById('frase').textContent = data.frase
+        })
+    </script>
 </body>
 </html>

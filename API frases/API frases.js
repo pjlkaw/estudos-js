@@ -11,7 +11,7 @@ app.get("/rota", (req, res) => {
 
 app.get("/frase", (req, res) => {
     res.json({
-        frase: "Olá mundo"
+        frase: "Olá mundo!"
     })
 })
 
