@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="resposta">Aparecer seu nome</h1>
+    <input id="nome" type="text" placeholder="insira nome">
+    <button onclick="enviar()">clique</button>
+
+    <script>
+        function enviar() {
+            const nome = document.getElementById("nome").value
+
+            fetch(`/user?nome=${nome}`)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('resposta').textContent = data.mensagem
+            })
+        }
+    </script>
+</body>
+</html>
