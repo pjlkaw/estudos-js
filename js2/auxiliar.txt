@@ -1,0 +1,293 @@
+================================================
+PROJETOS DE PRÁTICA – JAVASCRIPT / NODE / FRONT + BACK
+================================================
+ORDEM DE ESTUDO
+===============
+
+1 lista_tarefas
+2 lista_tarefas_storage
+3 api_front
+4 servidor
+5 api_frases
+6 integracao_front_back
+7 api_tarefas
+8 projeto_full
+9 api_intermediaria
+
+====================
+
+[1] LISTA DE TAREFAS (FRONT)
+Arquivo: lista_tarefas.js
+
+Objetivo:
+Treinar DOM e eventos.
+
+Ideia:
+Criar uma lista de tarefas simples no navegador.
+
+Fluxo:
+usuário digita tarefa
+↓
+clica em adicionar
+↓
+tarefa aparece na tela
+↓
+pode remover
+
+Passos:
+
+* criar input e botão
+* capturar valor do input
+* criar elemento HTML (li)
+* adicionar na lista
+* criar botão de remover
+
+Conceitos:
+DOM
+eventos
+manipulação de elementos
+
+---
+
+[2] LISTA DE TAREFAS COM LOCALSTORAGE
+Arquivo: lista_tarefas_storage.js
+
+Objetivo:
+Salvar dados no navegador.
+
+Ideia:
+As tarefas continuam mesmo após recarregar a página.
+
+Fluxo:
+usuário adiciona tarefa
+↓
+salva no localStorage
+↓
+recarrega página
+↓
+tarefas continuam lá
+
+Passos:
+
+* usar localStorage.setItem()
+* usar JSON.stringify()
+* recuperar com JSON.parse()
+* renderizar tarefas ao iniciar
+
+Conceitos:
+localStorage
+persistência de dados
+JSON
+
+---
+
+[3] CONSUMINDO API (FRONT)
+Arquivo: api_front.js
+
+Objetivo:
+Aprender a buscar dados de APIs.
+
+Ideia:
+Buscar uma frase ou imagem de API externa.
+
+Fluxo:
+botão clicado
+↓
+fetch()
+↓
+resposta JSON
+↓
+mostrar na tela
+
+Passos:
+
+* criar botão
+* usar fetch()
+* usar await response.json()
+* mostrar resultado no HTML
+
+Conceitos:
+fetch
+async/await
+requisição HTTP
+
+---
+
+[4] CRIANDO SERVIDOR
+Arquivo: servidor.js
+
+Biblioteca:
+Express
+
+Objetivo:
+Criar seu primeiro backend.
+
+Fluxo:
+servidor inicia
+↓
+acesso no navegador
+↓
+resposta aparece
+
+Passos:
+
+* instalar express
+* criar app
+* criar rota "/"
+* retornar mensagem
+* rodar com node
+
+Conceitos:
+Node.js
+Express
+servidor
+rotas
+
+---
+
+[5] API DE FRASES
+Arquivo: api_frases.js
+
+Biblioteca:
+Express
+
+Objetivo:
+Criar uma API simples.
+
+Fluxo:
+cliente acessa /frase
+↓
+servidor responde
+↓
+JSON com frase
+
+Passos:
+
+* criar array de frases
+* criar rota /frase
+* retornar JSON
+
+Conceitos:
+API
+JSON
+resposta HTTP
+
+---
+
+[6] FRONT + BACK (PRIMEIRA INTEGRAÇÃO)
+Arquivos:
+frontend.js
+servidor.js
+
+Objetivo:
+Conectar frontend com backend.
+
+Fluxo:
+frontend faz requisição
+↓
+backend recebe
+↓
+backend responde
+↓
+frontend mostra
+
+Passos:
+
+* rodar servidor
+* criar rota /frase
+* usar fetch no frontend
+* exibir resultado
+
+Conceitos:
+integração
+requisição e resposta
+client-server
+
+---
+
+[7] API DE TAREFAS (BACKEND)
+Arquivo: api_tarefas.js
+
+Objetivo:
+Mover lógica do front para o backend.
+
+Fluxo:
+frontend envia tarefa
+↓
+backend salva em array
+↓
+retorna lista
+
+Passos:
+
+* criar array tarefas
+* criar rota GET /tarefas
+* criar rota POST /tarefas
+* testar com fetch
+
+Conceitos:
+CRUD (básico)
+GET
+POST
+
+---
+
+[8] LISTA DE TAREFAS COMPLETA (FULL)
+Arquivos:
+frontend.js
+servidor.js
+
+Objetivo:
+Projeto completo simples.
+
+Fluxo:
+frontend envia tarefa
+↓
+backend salva
+↓
+backend retorna lista
+↓
+frontend atualiza tela
+
+Passos:
+
+* integrar tudo
+* remover uso de localStorage
+* usar apenas backend
+* atualizar lista dinamicamente
+
+Conceitos:
+fullstack básico
+estado
+integração completa
+
+---
+
+[9] BACKEND INTERMEDIANDO API
+Arquivo: api_intermediaria.js
+
+Objetivo:
+Entender backend como ponte.
+
+Ideia:
+Backend busca dados de outra API.
+
+Fluxo:
+frontend chama seu backend
+↓
+backend chama API externa
+↓
+retorna resultado tratado
+
+Passos:
+
+* usar fetch no backend
+* criar rota /dados
+* retornar resposta modificada
+
+Conceitos:
+API externa
+backend intermediário
+arquitetura
+
+
