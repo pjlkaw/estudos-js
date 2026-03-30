@@ -46,7 +46,7 @@ main {
     margin: 10px;
     transition: all 100ms ease-in-out;
 } 
-#deleteBtn {
+.deleteBtn {
     background-color: #af4c4c; 
     color: #fff; 
     padding: 10px 20px; 
