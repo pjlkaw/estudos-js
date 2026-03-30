@@ -1,13 +1,13 @@
 body { 
-font-family: Arial, sans-serif; 
-background-color: #4a4a4a; 
+    font-family: Arial, sans-serif; 
+    background-color: #4a4a4a; 
 } 
 
 header { 
-background-color: #333; 
-color: #fff; 
-padding: 20px; 
-text-align: center; 
+    background-color: #333; 
+    color: #fff; 
+    padding: 20px; 
+    text-align: center; 
 } 
 
 main { 
@@ -36,7 +36,7 @@ main {
     border: 1px solid #ccc; 
 } 
 
-#btn { 
+#addBtn { 
     background-color: #4CAF50; 
     color: #fff; 
     padding: 10px 20px; 
@@ -44,7 +44,21 @@ main {
     border-radius: 5px; 
     cursor: pointer; 
     margin: 10px;
+    transition: all 100ms ease-in-out;
 } 
+#deleteBtn {
+    background-color: #af4c4c; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin: 10px;
+    transition: all 100ms ease-in-out;
+}
+button:hover {
+    transform: scale(1.11);
+}
 
 .header {
     background-color: #333;
@@ -54,14 +68,14 @@ main {
 
 
 .table section { 
-display: flex; 
-padding: 10px; 
-border-bottom: 1px solid #ccc; 
+    display: flex; 
+    padding: 10px; 
+    border-bottom: 1px solid #ccc; 
 } 
 
 .table section p { 
-flex-basis: 33.33%; 
-text-align: center; 
+    flex-basis: 33.33%; 
+    text-align: center; 
 } 
 
 #sectionTarefas { 
@@ -76,6 +90,6 @@ text-align: center;
 } 
 
 #tarefa p { 
-flex-basis: 33.33%; 
-text-align: center; 
+    flex-basis: 33.33%; 
+    text-align: center; 
 }
