@@ -13,7 +13,8 @@ while (true) {
     console.log("2 - Listar")
     console.log("3 - Pesquisar por nome")
     console.log("4 - Pesquisar por idade")
-    console.log("5 - Sair")
+    console.log("5 - Deletar pelo nome")
+    console.log("6 - Sair")
     const input = rs.question('O que gostaria de fazer? ')
 
     if (input == 1) {
@@ -60,8 +61,17 @@ while (true) {
         })
     }
 
-    //encerra programa
     if (input == 5) {
+        console.log('Deletar usuário pelo index..: ');
+        const indexDelete = rs.questionInt('..:')
+
+        if (indexDelete >= 0 && indexDelete < usuario.length) {
+            usuario.splice(indexDelete, 1)
+        }
+    }
+
+    //encerra programa
+    if (input == 6) {
         return
     }
 }
