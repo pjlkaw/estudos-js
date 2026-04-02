@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="btnCiclo">Clique</button>
+    <p id="fraseCiclo">Ciclo</p>
+    
+    <span>API index</span>
+    <input id="input" type="number" placeholder="insira index">
+    <button id="btnIndex">Ver frase</button>
+    <p id="indexP"></p>
+    <p id="fraseIndex"></p>
+
+
+    <script>
+        let clique = 0
+        fetch('http://localhost:3000/frase')
+        .then(res => res.json())
+        .then(data => {
+            //Input
+            document.getElementById('btnIndex').addEventListener('click', () => {
+                const input = document.getElementById('input').value -1 // o -1 adequa ao formato de lista - se fosse exibir o index seria +1
+                if (input >= data.length) {
+                    alert("Não existe esse valor na API")
+                    return
+                }
+                document.getElementById('fraseIndex').textContent = data[input].frase
+                const indexP = document.getElementById('indexP')
+                const indexFake = data[input].id
+                indexP.textContent = `${indexFake}º Frase:\n`
+                input.textContent = ''
+            })
+
+            document.getElementById('btnCiclo').addEventListener('click', () => {
+                //Botão Ciclo
+                document.getElementById('fraseCiclo').textContent = data[clique].frase
+                clique = (clique+1) % data.length
+            })
+        })
+        .catch(error => console.error('Erro:', error));
+
+
+    </script>
+</body>
+</html>

@@ -8,7 +8,7 @@ ORDEM DE ESTUDO
 2 lista_tarefas_storage
 3 api_front
 4 servidor
-5 api_frases
+5 apiFrases
 6 integracao_front_back
 7 api_tarefas
 8 projeto_full

@@ -1,8 +1,8 @@
 {
-  "name": "js2",
+  "name": "apifrases",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "apiFrases.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1"
+    "cors": "^2.8.6"
   }
 }
