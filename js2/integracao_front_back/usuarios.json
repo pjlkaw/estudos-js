@@ -1,0 +1,32 @@
+[
+    {
+        "nome": "Maria",
+        "idade": 30,
+        "ativo": true,
+        "hobbies": ["leitura", "música", "viagens"],
+        "endereco": {
+            "cidade": "Belford Roxo",
+            "estado": "RJ"
+        }
+    },
+    {
+        "nome": "Gustavo",
+        "idade": 10,
+        "ativo": true,
+        "hobbies": ["futebol", "videogame"],
+        "endereco": {
+            "cidade": "Jandira",
+            "estado": "SP"
+        }
+    },
+    {
+        "nome": "Pedro",
+        "idade": 18,
+        "ativo": true,
+        "hobbies": ["instrumentos", "música", "jogos"],
+        "endereco": {
+            "cidade": "São Paulo",
+            "estado": "SP"
+        }
+    }
+]
