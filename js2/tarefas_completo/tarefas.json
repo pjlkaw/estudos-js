@@ -1,11 +1,9 @@
 [
     {
-        "id": 1,
         "tarefa": "Fazer o coiso",
         "feito": false
     },
     {
-        "id": 2,
         "tarefa": "Fazer o negócio la",
         "feito": true
     }

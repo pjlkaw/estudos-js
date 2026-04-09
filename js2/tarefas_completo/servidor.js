@@ -7,6 +7,15 @@ const app = express()
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')))
 
+// Definindo rota POST
+app.post('/tarefas', (req, res) => {
+    // req.body contém os dados enviados no corpo da requisição
+    console.log(req.body);
+
+    res.send(`Dados recebidos: ${JSON.stringify(req.body)}`);
+})
+
+// Definindo rota API
 app.get('/tarefas', (req, res) => {
     const tarefasAPI = fs.readFileSync('./tarefas.json', 'utf-8')
     const tarefas = JSON.parse(tarefasAPI)

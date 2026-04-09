@@ -14,17 +14,21 @@
     <main>
         <div>
             <label for="input">Adicionar Tarefa ..:</label>
-            <input name="input" type="text">
-            <button style="color: black;">+</button>
+            <input id="input" name="input" type="text">
+            <button id="addBtn" onclick="addTarefa()" style="color: black;">+</button>
         </div>
 
         <div class="containerLista">
-            <div id="lista">
-                <p>id</p>
-                <p>tarefa</p>
-                <p>check</p>
-            </div>
-            
+            <ul id="lista" class="lista">
+                <!-- header lista -->
+                <div class="containerTarefa headerTarefas">
+                    <span>ID</span>
+                    <span>Tarefa</span>
+                    <span>Status</span> 
+                </div>
+                <!--Conteúdo carregado no js-->
+            </ul>
+
         </div>
     </main>
 
