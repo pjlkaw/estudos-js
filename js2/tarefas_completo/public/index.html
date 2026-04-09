@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <ul id="lista">
-        
-    </ul>
+    <header>
+        <h1>Lista Tarefas</h1>
+    </header>
+
+    <main>
+        <div>
+            <label for="input">Adicionar Tarefa ..:</label>
+            <input name="input" type="text">
+            <button style="color: black;">+</button>
+        </div>
+
+        <div class="containerLista">
+            <div id="lista">
+                <p>id</p>
+                <p>tarefa</p>
+                <p>check</p>
+            </div>
+            
+        </div>
+    </main>
+
 
     <script src="frontend.js"></script>
 </body>

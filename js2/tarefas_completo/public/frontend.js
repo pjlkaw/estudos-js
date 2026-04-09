@@ -6,17 +6,15 @@ async function carregarTarefas() {
     lista.innerHTML = ''
 
     tarefas.forEach(item => {
-        const li = document.createElement('li')
+        const div = document.createElement('div')
 
         let check = ''
         if (item.feito === true) {
             check = '- ✓'
         }
 
-        li.textContent = `${item.id}# - ${item.tarefa} ${check}`
-        lista.appendChild(li)
+        div.innerHTML = `${item.id}# - ${item.tarefa} ${check}`
+        lista.appendChild(div)
     });
-
 }
-
 carregarTarefas()
