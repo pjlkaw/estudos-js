@@ -9,6 +9,15 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Definindo rota POST
 app.post('/tarefas', (req, res) => {
+    const novaTarefa = req.body
+    const dados = fs.readFileSync('./tarefas.json', 'utf-8')
+    const tarefas = JSON.parse(dados)
+    tarefas.push(novaTarefa) 
+    
+    fs.writeFileSync('./tarefas.json', JSON.stringify(tarefas, null, 2))
+
+    res.json({ ok: true, tarefa: novaTarefa })
+
     // req.body contém os dados enviados no corpo da requisição
     console.log(req.body);
 

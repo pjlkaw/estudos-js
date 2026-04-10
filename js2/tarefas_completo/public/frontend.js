@@ -2,6 +2,7 @@ async function addTarefa() {
     console.log(1);
     
     const valorInput = document.getElementById('input').value
+    if(valorInput === '' || valorInput.length < 2) return
     
     await fetch('/tarefas', {//Carrega tarefas da API do servidor
         method: 'POST',
@@ -14,7 +15,6 @@ async function addTarefa() {
 async function carregarTarefas() {
     const res = await fetch('/tarefas') //Carrega tarefas da API do servidor
     const tarefas = await res.json() 
-
 
     //Mostra as tarefas guardadas na API
     let id = 1
