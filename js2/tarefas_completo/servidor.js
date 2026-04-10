@@ -20,8 +20,6 @@ app.post('/tarefas', (req, res) => {
 
     // req.body contém os dados enviados no corpo da requisição
     console.log(req.body);
-
-    res.send(`Dados recebidos: ${JSON.stringify(req.body)}`);
 })
 
 // Definindo rota API
@@ -34,6 +32,25 @@ app.get('/tarefas', (req, res) => {
 
 app.listen(3000, () => {
     console.log("Servidor rodando - 3000");
+})
+
+//Definir tarefa feita
+app.put('/tarefas/:index', (req, res) => {
+    try {
+        const novaTarefa = req.body
+
+        const dados = fs.readFileSync('./tarefas.json', 'utf-8')
+        const tarefas = JSON.parse(dados)
+
+        tarefas.push(novaTarefa)
+
+        fs.writeFileSync('./tarefas.json', JSON.stringify(tarefas, null, 2))
+
+        res.json({ ok: true })
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ ok: false })
+    }
 })
 
 

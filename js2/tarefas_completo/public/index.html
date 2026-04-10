@@ -12,13 +12,14 @@
     </header>
 
     <main>
-        <div>
+        <div class="containerInput">
             <label for="input">Adicionar Tarefa ..:</label>
             <input id="input" name="input" type="text">
             <button id="addBtn" onclick="addTarefa()" style="color: black;">+</button>
         </div>
 
         <div class="containerLista">
+            <!-- header lista -->
             <ul class="lista">
                 <div class="containerTarefa headerTarefas">
                     <span>ID</span>
@@ -26,7 +27,6 @@
                     <span>Status</span> 
                 </div>
             </ul>
-            <!-- header lista -->
             <ul id="lista" class="lista">
                 <!--Conteúdo carregado no js-->
             </ul>

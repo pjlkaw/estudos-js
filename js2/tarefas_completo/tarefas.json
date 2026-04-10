@@ -1,10 +1,14 @@
 [
   {
     "tarefa": "Fazer o coiso",
-    "feito": false
+    "feito": true
   },
   {
     "tarefa": "Fazer o negócio la",
-    "feito": true
+    "feito": false
+  },
+  {
+    "tarefa": "fazer o treco",
+    "feito": false
   }
 ]

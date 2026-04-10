@@ -17,10 +17,9 @@ async function carregarTarefas() {
     const tarefas = await res.json() 
 
     //Mostra as tarefas guardadas na API
-    let id = 1
     const ul = document.getElementById('lista')
     document.getElementById('lista').innerHTML = ''
-    tarefas.forEach(item => {
+    tarefas.forEach((item, index) => {
         let check = ''
         if (item.feito === true) {
             check = '✓'
@@ -29,12 +28,21 @@ async function carregarTarefas() {
 
         li.innerHTML = `
             <div class="containerTarefa">
-                <span>${id++}#</span>
+                <span>${index + 1}#</span>
                 <span>${item.tarefa}</span>
-                <span>${check}</span> 
+                <span>${check} <button onclick="checkBtn(${index})"></button></span> 
             </div>
         `
         ul.appendChild(li)
-    });
-}
+    })
+};
+
 carregarTarefas()
+async function checkBtn(index) {
+    await fetch(`/tarefas/${index}`, {
+        method: 'PUT'
+    })
+
+    await carregarTarefas()
+}
+
