@@ -1,4 +1,4 @@
-import readline from 'readline';
+import inquirer from 'inquirer';
 
 async function api() {
     const url = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -7,38 +7,59 @@ async function api() {
     return data;
 }
 
-const data = await api();
+let data = await api();
 
-
-
-function main() {
+async function main() {
     listUsers(data);
 
-    console.log("1. List Users");
-    console.log("2. Create User");
-    console.log("3. Exit");
-    
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-
-    rl.question("Enter your choice: ", (choice) => {
-        switch (choice) {
-            case "1":
-                listUsers(data);
-                break;
-            case "2":
-                // Create 
-                break;
-            case "3":
-                console.log("Exiting...");
-                process.exit(0);
-            default:
-                console.log("Invalid choice");
+    const { choice } = await inquirer.prompt([
+        {
+            type: 'list',
+            name: 'choice',
+            message: 'Choose an option:',
+            choices: [
+                { name: 'List Users', value: '1' },
+                { name: 'Create User', value: '2' },
+                { name: 'Delete User', value: '3' },
+                { name: 'Exit', value: '4' }
+            ]
         }
-        rl.close();
-    });
+    ]);
+
+    switch (choice) {
+        case "1":
+            listUsers(data);
+            break;
+
+        case "2":
+            // Create 
+            const { name, email } = await inquirer.prompt([
+                { type: 'input', name: 'name', message: 'Name: ' },
+                { type: 'input', name: 'email', message: 'Email: ' }
+            ]);
+
+            createUser({name: name, email: email}).then(user => {
+                data.push(user);
+                listUsers(data);
+            });
+            break;
+
+        case "3":
+            // delete user
+            const { id } = await inquirer.prompt({type:'input', name: 'id', message: "Enter user ID to delete: "})
+            deleteUser(id).then(result => {
+                data = result;
+                listUsers(data);
+            });
+            break;
+
+        case "4":
+            console.log("Exiting...");
+            process.exit(0);
+
+        default:
+            console.log("Invalid choice");
+    }
 }
 
 main();
@@ -62,4 +83,15 @@ async function createUser(value) {
     const result = await response.json()
     console.log(result);
     return result
+}
+
+async function deleteUser(id) {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users/'+id, 
+        {
+            method: 'DELETE'
+        }
+    )
+    if (response.ok) {
+        return data.filter(user => user.id !=id)
+    }
 }

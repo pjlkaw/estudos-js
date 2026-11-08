@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "inquirer": "^12.11.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pjlkaw/estudos-js.git"
