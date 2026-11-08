@@ -8,14 +8,23 @@ ORDEM DE ESTUDO
 ===============
 
 1 simulador_de_download
+
 2 conversor_json
+
 3 sistema_de_modulos
+
 4 buscador_de_cep
+
 5 ler_arquivo
+
 6 gerador_de_senha
+
 7 api_frases
+
 8 api_usuarios
+
 9 nome_do_usuario
+
 
 ===============
 

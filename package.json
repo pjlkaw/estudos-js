@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/pjlkaw/estudos-js/issues"
   },
-  "homepage": "https://github.com/pjlkaw/estudos-js#readme",
-  "dependencies": {
-    "express": "^5.2.1"
-  }
+  "homepage": "https://github.com/pjlkaw/estudos-js#readme"
 }

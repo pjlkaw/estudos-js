@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <h1>Lista Tarefas</h1>
+    </header>
+
+    <main>
+        <div class="containerInput">
+            <label for="input">Adicionar Tarefa ..:</label>
+            <input id="input" name="input" type="text">
+            <button id="addBtn" onclick="addTarefa()" style="color: black;">+</button>
+        </div>
+
+        <div class="containerLista">
+            <!-- header lista -->
+            <ul class="lista">
+                <div class="containerTarefa headerTarefas">
+                    <span>ID</span>
+                    <span>Tarefa</span>
+                    <span>Status</span> 
+                </div>
+            </ul>
+            <ul id="lista" class="lista">
+                <!--Conteúdo carregado no js-->
+            </ul>
+
+        </div>
+    </main>
+
+
+    <script src="frontend.js"></script>
+</body>
+</html>

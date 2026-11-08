@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    color:  white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+header {
+    margin: 40px;
+}
+
+body {
+    background-color: rgb(36, 36, 36);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    background-color: gray;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 10px black;
+}
+
+.containerInput {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+input {
+    color: black;
+}
+
+button {
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+ul {
+    text-align: center;
+}
+
+.headerTarefas {
+    background-color: black;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-decoration: nome;
+}
+li {
+    text-align: center;
+    list-style: none;
+    border-bottom: solid 1px black;
+}
+.containerTarefa {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+

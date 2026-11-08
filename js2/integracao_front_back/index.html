@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        #resultado {
+            display: flex;
+            flex-direction: row;
+        }
+        #div {
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <section id="resultado">
+        erro
+
+    </section>
+
+    <script>
+        fetch('/usuarios')
+        .then(res => res.json())
+        .then(data => {
+
+            let html = ''
+            data.forEach(obj => {
+                html += `<div id="div" style="margin-bottom:20px; border:1px solid #ccc; padding:10px;">
+                    <p><strong>Nome:</strong> ${obj.nome}</p>
+                    <p><strong>Idade:</strong> ${obj.idade}</p>
+                    <p><strong>Ativo:</strong> ${obj.ativo}</p>
+                    <p><strong>Hobbies:</strong> ${obj.hobbies.join(' | ')}</p>
+                    <p><strong>Cidade:</strong> ${obj.endereco.cidade}</p>
+                    <p><strong>Estado:</strong> ${obj.endereco.estado}</p>
+                </div>`
+            });
+
+            document.getElementById('resultado').innerHTML = html;
+        
+        })
+
+    </script>
+</body>
+</html>
