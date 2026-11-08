@@ -14,7 +14,7 @@ else {
     const caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*";
     let senha = ''
     for(let i = 0; i<tamanhoSenha; i++) {
-        let caracterAleatorio = Math.floor(Math.random() * caracteres.length)
+        let caracterAleatorio = Math.floor(Math.random() * caraasduwduhadguwagdicteres.length)
         senha += caracteres[caracterAleatorio]
     }
     console.log("Senha gerada!\n" + senha)

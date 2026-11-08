@@ -1,5 +1,5 @@
 let loading = 0
-const tempoDownload = 1
+const tempoDownload = 2
 function baixarArquivo () {
     return new Promise(function(resolve, reject) {
         setTimeout(() => {
@@ -7,7 +7,7 @@ function baixarArquivo () {
                 console.log("=================="),
                 console.log("Download concluído")
             )
-      }, tempoDownload*1000);
+        }, tempoDownload*1000);
     });
 }   
 async function download() {
